@@ -10,7 +10,7 @@ import java.util.List;
 @RequestMapping("/happymedics/api")
 public class UserController {
 
-    private UserService userService;
+    private final UserService userService;
 
     @Autowired
     public UserController(UserService userService) {
@@ -22,8 +22,13 @@ public class UserController {
         return userService.getUsers();
     }
 
-    @PostMapping("/addNewUser")
+    @PostMapping("/add-new-user")
     public void addNewUser(@RequestBody User user) {
         userService.addNewUser(user);
+    }
+
+    @DeleteMapping(path = "/delete-user/{userId}")
+    public void deleteUser(@PathVariable("userId") Long id) {
+        userService.deleteUser(id);
     }
 }
