@@ -1,6 +1,7 @@
 package com.codingchallenge.happymedics.user;
 
 
+import org.apache.catalina.connector.Response;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -23,8 +24,8 @@ public class UserController {
     }
 
     @PostMapping("/add-new-user")
-    public void addNewUser(@RequestBody User user) {
-        userService.addNewUser(user);
+    public String addNewUser(@RequestBody User user) {
+        return userService.addNewUser(user);
     }
 
     @DeleteMapping(path = "/delete-user/{userId}")

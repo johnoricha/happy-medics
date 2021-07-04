@@ -1,6 +1,7 @@
 package com.codingchallenge.happymedics.user;
 
 
+import org.apache.coyote.Response;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.w3c.dom.stylesheets.LinkStyle;
@@ -18,12 +19,12 @@ public class UserService {
         this.userRepository = userRepository;
     }
 
-    public void addNewUser(User user) {
+    public String addNewUser(User user) {
         Optional<User> userByEmail = userRepository.findUserByEmail(user.getEmail());
         if(userByEmail.isPresent()) {
             throw new IllegalStateException("email already exists");
         }
-        userRepository.save(user);
+        return userRepository.save(user).toString();
     }
 
     public List<User> getUsers() {
