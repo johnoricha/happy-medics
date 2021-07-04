@@ -58,7 +58,7 @@ set ERROR_CODE=0
 @setlocal
 
 @REM ==== START VALIDATION ====
-if not "%JAVA_HOME%" == "" goto OkJHome
+if not "%JAVA_HOME%" == "C:\Program Files\Java\jdk-13.0.1" goto OkJHome
 
 echo.
 echo Error: JAVA_HOME not found in your environment. >&2
