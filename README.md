@@ -9,7 +9,7 @@ This API provides endpoints for:
 # endpoints
 Request
 ## add-new-user
-curl --location --request POST 'http://localhost:8080/happymedics/api/add-new-user' \
+curl --location --request POST 'http://glacial-everglades-85578.herokuapp.com/happymedics/api/add-new-user' \
 --header 'Content-Type: application/json' \
 --data-raw '{
     "name": "cynthia",
@@ -20,7 +20,7 @@ curl --location --request POST 'http://localhost:8080/happymedics/api/add-new-us
 
 OR\
 
-curl --location --request POST 'http://localhost:8080/happymedics/api/add-new-user' \
+curl --location --request POST 'https://glacial-everglades-85578.herokuapp.com/happymedics/api/add-new-user' \
 --header 'Content-Type: application/json' \
 --data-raw '{
     "name": "david",
@@ -30,11 +30,11 @@ curl --location --request POST 'http://localhost:8080/happymedics/api/add-new-us
 }'
 
 ## delete-user
-curl --location --request DELETE 'http://localhost:8080/happymedics/api/delete-user/{userId}' \
+curl --location --request DELETE 'https://glacial-everglades-85578.herokuapp.com/happymedics/api/delete-user/{userId}' \
 --header 'Content-Type: application/json' \
 
 ## make-appointment 
-curl --location --request POST 'http://localhost:8080/happymedics/api/make-appointment' \
+curl --location --request POST 'http://glacial-everglades-85578.herokuapp.com/happymedics/api/make-appointment' \
 --header 'Content-Type: application/json' \
 --data-raw '{
     "title": "Appointment with Dr Vivian",
@@ -44,7 +44,7 @@ curl --location --request POST 'http://localhost:8080/happymedics/api/make-appoi
 }'
 
 ## delete-appointment 
-curl --location --request DELETE 'http://localhost:8080/happymedics/api/delete-appointment/{appointmentId}' \
+curl --location --request DELETE 'http://glacial-everglades-85578.herokuapp.com/api/delete-appointment/{appointmentId}' \
 --header 'Content-Type: application/json'
 
 #Libraries And Frameworks
